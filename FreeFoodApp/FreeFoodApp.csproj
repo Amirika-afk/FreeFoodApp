@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>FreeFoodApp</ApplicationTitle>
+		<ApplicationTitle>Free Item Give-Away App</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.freefoodapp</ApplicationId>
@@ -32,14 +32,14 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiImage Include="Resources\AppIcon\green_item.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#43840a" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\green_item.png" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Images\location.png" />
 	  <None Remove="Resources\Images\medal.png" />
 	  <None Remove="Resources\Images\timeline.png" />
+	  <None Remove="Resources\Raw\ItemFile.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -65,10 +66,16 @@
 	  <Compile Update="Views\AddProductPage.xaml.cs">
 	    <DependentUpon>AddProductPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\ListOfProductPage.xaml.cs">
+	    <DependentUpon>ListOfProductPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\GetItemPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListOfProductPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginPage.xaml">

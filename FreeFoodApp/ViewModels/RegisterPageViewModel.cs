@@ -14,7 +14,7 @@ public partial class RegisterPageViewModel : BaseViewModel
     [RelayCommand]
     async void TapCommand()
     {
-        await Shell.Current.GoToAsync("//LoginPage");
+        await Shell.Current.GoToAsync("..");
     }
 
 

@@ -5,43 +5,46 @@
              xmlns:viewmodel="clr-namespace:FreeFoodApp.ViewModels"
              x:DataType="viewmodel:UserProfilePageViewModel"
              Shell.NavBarIsVisible="false"
-             BackgroundColor="Gainsboro"
+             BackgroundColor="#def88f"
              Title="User Profile Page">
 
 
-    <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+    <ScrollView HorizontalScrollBarVisibility="Never">
         <!-- Main layout-->
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20,0">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="20,0">
             <!--Timeline -->
-            <Frame Grid.Row="0" BorderColor="White" VerticalOptions="Start" HeightRequest="160" HasShadow="False" CornerRadius="20" Margin="0,45,0,20" Padding="0" IsClippedToBounds="True">
-                <Image Source="timeline" Aspect="AspectFill"/>
+            <Frame Grid.Row="0" BorderColor="#95cb0a" VerticalOptions="Start" HeightRequest="160" HasShadow="False" CornerRadius="20" Margin="0,45,0,20" Padding="0" IsClippedToBounds="True">
+                <Image Source="timeline.png" Aspect="AspectFill"/>
             </Frame>
             <!-- Image Profile-->
-            <Frame Grid.Row="1" Margin="0,-90,0,0" BorderColor="White" HorizontalOptions="Center" WidthRequest="110" HeightRequest="{OnPlatform iOS='110', Android='20'}" HasShadow="False" CornerRadius="55" Padding="0" IsClippedToBounds="True">
-                <Image Source="dotnet_png" Aspect="AspectFill"/>
+            <Frame Grid.Row="1" Margin="0,-90,0,0" BorderColor="#95cb0a" HorizontalOptions="Center" WidthRequest="110" HeightRequest="{OnPlatform iOS='110', Android='110'}" HasShadow="False" CornerRadius="55" Padding="0" IsClippedToBounds="True" >
+                <Image Source="user.JPG" Aspect="AspectFill"/>
             </Frame>
             <!-- Profile name & general description-->
-            <Label Grid.Row="2" Text="Chicken Turkey" FontAttributes="Bold" TextColor="#383b67" HorizontalTextAlignment="Center" Margin="0,20,0,0" FontSize="22"/>
+            <Label Grid.Row="2" Text="Abu Labi" FontAttributes="Bold" TextColor="#383b67" HorizontalTextAlignment="Center" Margin="0,20,0,0" FontSize="22"/>
 
             <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0">
-                <Button Grid.Column="0" ImageSource="location" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
+                <Button Grid.Column="0" ImageSource="location" Margin="10,0,0,13" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
                 <Label Grid.Column="1" Text=" Amazon, Mexico" FontSize="15" TextColor="#9192b7"/>
-                <Button Grid.Column="2" ImageSource="age" Margin="10,0,0,0" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
+                <Button Grid.Column="2" ImageSource="age" Margin="10,0,0,13" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
                 <Label Grid.Column="3" Text=" Age, 200" FontSize="15" TextColor="#9192b7"/>
-                <Button Grid.Column="4" Text="Regular" TextColor="#e29389" FontAttributes="Bold" Margin="5,0,0,0" CornerRadius="10" FontSize="9" WidthRequest="{OnPlatform iOS='50', Android='59'}" HeightRequest="{OnPlatform iOS='21', Android='30'}" BackgroundColor="#fae6e4"/>
+                <Button Grid.Column="4" Text="Regular" TextColor="#e29389" FontAttributes="Bold" Margin="20,0,0,-5" CornerRadius="10" FontSize="9" WidthRequest="{OnPlatform iOS='50', Android='65'}" HeightRequest="{OnPlatform iOS='21', Android='40'}" BackgroundColor="#fae6e4"/>
 
             </Grid>
 
             <Label Grid.Row="4" Text="Description" FontAttributes="Bold" TextColor="#383b67" HorizontalTextAlignment="Start" Margin="0,40,0,20" FontSize="20"/>
-            <Label Grid.Row="5" TextColor="#8d92b9" HorizontalTextAlignment="Start" FontSize="15" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&#10;&#10;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            <Label Grid.Row="5" TextColor="#8d92b9" HorizontalTextAlignment="Start" FontSize="15" Text="I am an ecommerce entrepreneur who offers a unique shopping experience by providing a mix of free and paid items. I am a creative and innovative thinker, always looking for new ways to attract and retain customers. 
+                   I have an online store or platform where I list and sell my products, and use various digital marketing techniques to reach potential customers. I am also involved in sourcing, manufacturing, or distributing my products. 
+                   I am a business-savvy individual who understands the importance of giving back to the community by offering free items, 
+                   while also running a profitable business by selling my items. I am dedicated to providing quality products and excellent customer service, and have a passion for helping others.."/>
 
             
             
             <!-- Line & Final buttons-->
-            <BoxView Grid.Row="8" HorizontalOptions="FillAndExpand" HeightRequest="1"  Margin="-20,0,0,20" Color="#eaeaf0"/>
-            <Grid ColumnDefinitions="Auto,*" HorizontalOptions="FillAndExpand" Grid.Row="9" Margin="0,0,0,20">
-                <Button Grid.Column="0" Text="Edit Profile" BackgroundColor="White" ImageSource="medal" HorizontalOptions="Center" WidthRequest="200" CornerRadius="18" FontAttributes="Bold" TextColor="#383b67" BorderColor="Silver" Margin="0,0,10,0" HeightRequest="50" BorderWidth="1"/>
-              
+            <BoxView Grid.Row="8" HorizontalOptions="FillAndExpand" HeightRequest="1"  Margin="-20,50,0,25" Color="#95cb0a"/>
+            <Grid Grid.Row="9" ColumnDefinitions="Auto,*" HorizontalOptions="FillAndExpand" Grid.RowDefinitions="Auto,Auto,Auto" Margin="0,0,0,20">
+                <Button Grid.Column="0"  Text="Edit Profile" BackgroundColor="White" ImageSource="medal" HorizontalOptions="Center" WidthRequest="180" CornerRadius="18" FontAttributes="Bold" TextColor="#383b67" BorderColor="#95cb0a" Margin="0,0,10,0" HeightRequest="50" BorderWidth="1"/>
+                <Button Grid.Column="1" Command="{Binding BackBtnCommand}" Text="Back" BackgroundColor="White" ImageSource="medal" HorizontalOptions="Center" WidthRequest="180" CornerRadius="18" FontAttributes="Bold" TextColor="#383b67" BorderColor="#95cb0a" Margin="0,0,10,0" HeightRequest="50" BorderWidth="1"/>
             </Grid>
 
         </Grid>

@@ -5,19 +5,66 @@
              x:DataType="viewmodel:ProductDetailPageViewModel"
              x:Class="FreeFoodApp.Views.ProductDetailPage"
              Shell.NavBarIsVisible="false"
-             Title="Product Detail Page">
-    
-    
-    <VerticalStackLayout>
-        <Frame BackgroundColor="Gainsboro" HeightRequest="80" Margin="30">
-        <Label 
-            Text="{Binding Text}"
-            FontSize="20"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        </Frame>
+              Title="{Binding Iteminfo.ItemName}">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,*">
+
+            <!-- Background, Image of Item, ItemName -->
+            <BoxView
+    BackgroundColor="{StaticResource Primary}"
+    Grid.RowSpan="2"
+    HorizontalOptions="Fill"
+    VerticalOptions="Fill"/>
+
+            <Border StrokeShape="RoundRectangle 80"
+        Stroke="White"
+        StrokeThickness="6"
+        HeightRequest="160"
+        WidthRequest="160"
+        Margin="0,8,0,0"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+                <Image Aspect="AspectFill"
+            HeightRequest="160"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Source="{Binding Iteminfo.Image}"
+            WidthRequest="160"/>
+            </Border>
+
+            <Label Style="{StaticResource LargeLabel}" 
+        Grid.Row="1"
+        TextColor="White"
+        FontAttributes="Bold"
+        Text="{Binding Iteminfo.ItemName}" 
+        HorizontalOptions="Center"
+        Margin="0,0,0,8"/>
+            <Label Style="{StaticResource LargeLabel}" 
+        Grid.Row="1"
+        TextColor="White"
+        FontAttributes="Bold"
+        Text="{Binding Text}" 
+        Padding="10"
+        HorizontalOptions="Center"
+        Margin="0,0,0,8"/>
+            <!-- Details of Item -->
+            <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
+                <Label Padding="10"  Style="{StaticResource MediumLabel}" Text="{Binding Iteminfo.Details}" />
+                
+            </VerticalStackLayout>
+            <Button Text="Back"
+                TextColor="Black"
+                Command="{Binding GoBackCommand}"
+                Margin="5"
+                VerticalOptions="EndAndExpand"
+                HeightRequest="60"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Wheat"
+            
+                />
+        </Grid>
         
-        <Button Text="Go Back"
-                Command="{Binding GoBackCommand}"/>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

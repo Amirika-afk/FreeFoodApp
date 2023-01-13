@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreeFoodApp.Views.ListOfProductPage"
+             xmlns:viewmodel="clr-namespace:FreeFoodApp.ViewModels"
+             xmlns:model="clr-namespace:FreeFoodApp.Models"
+             x:DataType="viewmodel:ListOfProductViewModel"
+             Shell.NavBarIsVisible="False"
+             Title="List Of Product">
+    <ScrollView>
+        <StackLayout Margin="10">
+            <Label Text="Free Item" TextColor="Black" FontAttributes="Bold"/>
+            <CollectionView ItemsSource="{Binding ItemList}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Iteminfo">
+                        <Grid Padding="10">
+                            <Frame HeightRequest="130" Style="{StaticResource CardView}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListOfProductViewModel}}, Path=GoToDetailsCommand}"
+                            CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                                <Grid Padding="0" ColumnDefinitions="125,*">
+                                    <Image
+                                                Aspect="AspectFill"
+                                                HeightRequest="125"
+                                                Source="{Binding Image}"
+                                                WidthRequest="125" />
+                                    <VerticalStackLayout
+                                                VerticalOptions="Center"
+                                                Grid.Column="1"
+                                                Padding="20">
+                                        <Label Style="{StaticResource LargeLabel}" Text="{Binding ItemName}" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Details}" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                                </Frame>
+                        </Grid>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            <Button Text="Go Back"
+                Command="{Binding GoBackBtnCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                    BackgroundColor="#43840a"
+                Grid.Column="0"
+                Margin="8"/>
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

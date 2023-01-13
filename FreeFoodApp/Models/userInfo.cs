@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FreeFoodApp.Models
 {
-    public class userInfo
+    public class userinfo
     {
         public int UserID { get; set; }
         public string UserName { get; set; }

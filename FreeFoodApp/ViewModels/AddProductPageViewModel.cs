@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace FreeFoodApp.ViewModels;
-
+[QueryProperty(nameof(Text), "Text")]
 public partial class AddProductPageViewModel : BaseViewModel
 {
     public AddProductPageViewModel()
@@ -56,13 +56,7 @@ async Task Tap(string s)
         });
 }
     [RelayCommand]
-    async Task GoBack(String s)
-    {
-        await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}?TextID={s}",
-         new Dictionary<string, object>
-         {
-            {nameof(MainMenuPage), s}
-         });
-    }
+    Task GoBack() => Shell.Current.GoToAsync("MainMenuPage");
+    
 
 }

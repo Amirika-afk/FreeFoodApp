@@ -1,28 +1,19 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using FreeFoodApp.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FreeFoodApp.Models;
 
 namespace FreeFoodApp.ViewModels;
-[QueryProperty("Text", "TextID")]
+[QueryProperty(nameof(Iteminfo), "Iteminfo")]
+[QueryProperty(nameof(Text), "Text")]
 public partial class ProductDetailPageViewModel : BaseViewModel
 {
     [ObservableProperty]
     String text;
+    [ObservableProperty]
+    Iteminfo iteminfo;
 
     [RelayCommand]
-    async Task GoBack(String s)
-    {
-       await Shell.Current.GoToAsync($"{nameof(AddProductPage)}?TextID={s}",
-        new Dictionary<string, object>
-        {
-            {nameof(AddProductPage), s}
-        });
-    }
+    Task GoBack() => Shell.Current.GoToAsync("MainMenuPage");
 
 
 }
