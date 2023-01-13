@@ -5,7 +5,7 @@
              x:DataType="viewmodel:AddProductPageViewModel"
              x:Class="FreeFoodApp.Views.AddProductPage"
              Shell.NavBarIsVisible="false"
-             BackgroundColor="ForestGreen"
+             BackgroundColor="#def88f"
              Title="Add Product Page">
 
     <ScrollView>
@@ -21,7 +21,7 @@
               BackgroundColor="Transparent"/>
 
            
-        <Entry Placeholder="Enter Task"
+        <Entry Placeholder="Add Item"
                TextColor="WhiteSmoke"
                PlaceholderColor="WhiteSmoke"
                HorizontalTextAlignment="Center"
@@ -81,6 +81,7 @@
 
         </CollectionView>
         <Button Text="Back"
+                TextColor="Black"
                 Command="{Binding GoBackCommand}"
                 Margin="5"
                 VerticalOptions="EndAndExpand"

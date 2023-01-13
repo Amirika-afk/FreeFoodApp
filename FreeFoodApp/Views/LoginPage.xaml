@@ -4,7 +4,7 @@
              xmlns:viewmodel="clr-namespace:FreeFoodApp.ViewModels"
              x:DataType="viewmodel:LoginPageViewModel"
              x:Class="FreeFoodApp.Views.LoginPage"
-             
+             Shell.NavBarIsVisible="False"
              Title="Login Page">
 
     <ScrollView>
@@ -16,9 +16,9 @@
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
-        <Frame Grid.Row="1" CornerRadius="5" BackgroundColor="Gray" VerticalOptions="CenterAndExpand" Margin="0,40,0,0">
+        <Frame Grid.Row="1" CornerRadius="5" BackgroundColor="#214205" VerticalOptions="CenterAndExpand" Margin="0,40,0,0">
             <VerticalStackLayout Spacing="15">
-                <Label Text="Login" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="LOGIN" TextColor="White" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
                 <Frame Padding="10">
                     <Grid ColumnDefinitions="auto,*">
                         <Entry Placeholder="Username" Grid.Column="1" TextColor="Black" x:Name="txtUsername" />
@@ -37,13 +37,13 @@
                 WidthRequest="100"
                 Command="{Binding LoginBtnCommand}"
                 Text="Login"
+                            BackgroundColor="#43840a"
                 HorizontalOptions="Center" />
                         <Button 
                     Command="{Binding SignUpBtnCommand}"
                 WidthRequest="100"
+                BackgroundColor="#43840a"
                 Text="Sign Up"
-                
-                
                 HorizontalOptions="Center" />
                     </HorizontalStackLayout>
                 </VerticalStackLayout>

@@ -9,6 +9,6 @@ namespace FreeFoodApp.Service
 {
     public interface ILoginRepository
     {
-        Task<userInfo>Login(string username, string password);
+        Task<userinfo>Login(string username, string password);
     }
 }

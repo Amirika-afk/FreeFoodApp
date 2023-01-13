@@ -15,9 +15,9 @@ public partial class LoginPageViewModel : BaseViewModel
 
 
     [RelayCommand]
-    void SignUpBtn()
+    async Task SignUpBtn()
     {
-        Shell.Current.GoToAsync(nameof(RegisterPage));
+       await Shell.Current.GoToAsync("//LoginPage/RegisterPage");
     }
 
     [ObservableProperty]
@@ -27,12 +27,9 @@ public partial class LoginPageViewModel : BaseViewModel
     private string _passWord;
 
     [RelayCommand]
-    void LoginBtn()
-    {
+    Task LoginBtn() => Shell.Current.GoToAsync("MainMenuPage");
 
-        Shell.Current.GoToAsync(nameof(MainMenuPage));
-
-    }
+    
 
 }
 }

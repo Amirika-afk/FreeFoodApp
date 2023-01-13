@@ -11,21 +11,20 @@ namespace FreeFoodApp.ViewModels;
 public partial class MainMenuPageViewModel : BaseViewModel
 {
 
-    [RelayCommand]
-    async Task SignOutBtn()
-    {
-        await Shell.Current.GoToAsync("//LoginPage");
-    }
+   
     [RelayCommand]
     async Task AddProductBtn()
     {
         await Shell.Current.GoToAsync("AddProductPage");
     }
     [RelayCommand]
-    async Task UserProfileBtn()
-    {
-        await Shell.Current.GoToAsync("UserProfilePage");
-    }
+    Task UserProfileBtn() => Shell.Current.GoToAsync("UserProfilePage");
 
+    [RelayCommand]
+    Task ViewProduct() => Shell.Current.GoToAsync("ListOfProductPage");
+
+    [RelayCommand]
+    Task SignOutBtn() => Shell.Current.GoToAsync("////LoginPage");
+    
 
 }
